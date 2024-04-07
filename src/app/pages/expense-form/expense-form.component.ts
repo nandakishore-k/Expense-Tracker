@@ -22,7 +22,7 @@ export class ExpenseFormComponent {
 
   constructor(
     private fb: FormBuilder,
-     private expenseService: ExpenseService, 
+     private expenseServices: ExpenseService, 
      private router: Router,
      private activatedRoute: ActivatedRoute,
      ) {
@@ -47,13 +47,13 @@ export class ExpenseFormComponent {
   OnSubmit(){
     if(this.expenseForm.valid){
       if(this.expenseId != ''){
-        this.expenseService.updateExpense(
+        this.expenseServices.updateExpense(
           this.expenseId,
           this.expenseForm.value
         );
       }
       else{
-      this.expenseService.addExpense(this.expenseForm.value);
+      this.expenseServices.addExpense(this.expenseForm.value);
       }
       this.router.navigate(['/']);
     }
@@ -63,9 +63,9 @@ export class ExpenseFormComponent {
   }
 
   getExpense(key: string){
-    this.expenseService.getExpense(key).snapshotChanges().subscribe({
-      next: (data) => {
-        let expense = data.payload.toJSON() as IExpense;
+    this.expenseServices.getExpense(key).snapshotChanges().subscribe({
+      next:(data)=>{
+        let expense=data.payload.toJSON() as IExpense;
         this.expenseForm.setValue(expense);
       },
     });

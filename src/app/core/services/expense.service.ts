@@ -7,7 +7,7 @@ import { IExpense } from '../models/common.model';
 })
 export class ExpenseService {
 
-  private dbPath = '/expenses';
+  private dbPath = "/expenses";
   expensesRef: AngularFireList<any>;
   constructor(private db: AngularFireDatabase){
     this.expensesRef = db.list(this.dbPath);
@@ -16,9 +16,9 @@ getAllExpenses(){
   return this.expensesRef;
 }
 
-getExpense(key: string){
-  return this.db.object('${this.dbPath}/${key}')
-}
+getExpense(key:string){
+    return this.db.object(`${this.dbPath}/${key}`);
+   }
 
 addExpense(expense: IExpense){
   this.expensesRef.push(expense);

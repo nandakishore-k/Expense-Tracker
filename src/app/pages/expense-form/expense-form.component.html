@@ -5,14 +5,14 @@
         <form [formGroup]="expenseForm" (submit)="OnSubmit()">
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="price" formControlName="price">
+                <input type="text" class="form-control" id="price" placeholder="price" formControlName="price">
               </div>
               @if (expenseForm.get('price')?.hasError('required')  &&  expenseForm.get('price')?.touched){
                 <div class="form-text text-danger">price required</div>
             }
               <div class="mb-3">
                 <label for="Title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" formControlName="title">
+                <input type="text" class="form-control" id="title" placeholder="Title" formControlName="title">
               </div>
               @if (expenseForm.get('title')?.hasError('required')  &&  expenseForm.get('title')?.touched){
                   <div class="form-text text-danger">title required</div>
