@@ -10,7 +10,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 export class AuthService{
     firebaseAuth = inject(Auth)
 
-    register(email: string,username:string,password:string):Observable<void>{
+    register(email: string,username:string,password:string,f_name:string,l_name: string):Observable<void>{
         const promise = createUserWithEmailAndPassword(
             this.firebaseAuth,
             email,
