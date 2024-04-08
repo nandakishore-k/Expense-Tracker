@@ -26,11 +26,5 @@ export class AppComponent {
 }
 
 
-function provideAuth(arg0: () => any): import("@angular/core").ImportProvidersSource {
-  throw new Error('Function not implemented.');
-}
 
-function getAuth(): any {
-  throw new Error('Function not implemented.');
-}
 
