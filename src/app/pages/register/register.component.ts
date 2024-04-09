@@ -17,7 +17,7 @@ export class RegisterComponent {
   http = inject(HttpClient);
   authService=inject(AuthService)
   router = inject(Router);
-
+   
   form = this.fb.nonNullable.group({
     username :['',Validators.required],
     email :['', Validators.required],

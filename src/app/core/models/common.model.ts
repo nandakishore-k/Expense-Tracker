@@ -4,3 +4,7 @@ export interface IExpense{
     description: string;
     price: string;
 }
+export interface UserData {
+  email: string;
+  role: string;
+}
